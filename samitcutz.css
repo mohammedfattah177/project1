@@ -588,16 +588,15 @@ body {
     /* Services Section */
     #services {
         display: flex;
-        flex-direction: column; 
-        align-items: center;
-        text-align: center;
+        flex-wrap: wrap; /* Allow services to wrap to the next line */
+        justify-content: center;
         padding: 40px 15px;
     }
 
     .service-item {
-        width: 90%; 
-        max-width: 400px; 
-        margin: 20px auto; 
+        width: 45%;  /* Make each service item take up 45% width */
+        max-width: 45%;  /* Limit to 45% width */
+        margin: 10px; /* Adjust the gap between items */
         padding: 20px;
     }
 
@@ -612,7 +611,7 @@ body {
     .logo {
         position: static;
         transform: none;
-        width: 100px; 
+        width: 100px;
         margin-bottom: 10px;
     }
 
