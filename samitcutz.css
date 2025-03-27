@@ -293,20 +293,15 @@ body {
 /* Responsivt Design */
 @media (max-width: 768px) {
     /* Services Section */
-    
     #services {
-    background-color: #f4f4f4;
-    padding: 60px 20px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     .service-item {
-    width: 90%;
-    max-width: 400px;
-    margin: 20px auto;
-    
+        width: 90%;
+        max-width: 400px;
+        margin: 20px auto;
     }
 
     /* Header & Navigation */
@@ -412,15 +407,13 @@ body {
     }
 
     /* Services on Tablet */
-    #services {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 2 per row */
-        gap: 20px;
-        justify-content: center;
+   #services {
+        display: flex;
+        flex-direction: column; /* Stack vertically */
+        align-items: center;
     }
-
     .service-item {
-        width: 100%;
+        width: 90%;
         max-width: 350px;
     }
 }
