@@ -291,27 +291,42 @@ body {
 }
 
 /* Responsivt Design */
-/* Responsivt Design */
 @media (max-width: 768px) {
+    /* Services Section */
+    #services {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        text-align: center;
+        padding: 40px 15px;
+    }
+
+    .service-item {
+        width: 90%; 
+        max-width: 400px; 
+        margin: 20px auto; 
+        padding: 20px;
+    }
+
     /* Header & Navigation */
     .header {
         flex-direction: column;
         text-align: center;
         height: auto;
-        padding: 10px 0;
+        padding: 15px 0;
     }
 
     .logo {
         position: static;
         transform: none;
-        width: 120px; 
+        width: 100px; 
         margin-bottom: 10px;
     }
 
     .nav-menu {
         flex-direction: column;
         align-items: center;
-        background-color: #000000;
+        background-color: #111;
         padding: 10px;
         width: 100%;
         margin-left: 0;
@@ -331,19 +346,19 @@ body {
 
     .nav-menu ul li a {
         font-size: 18px;
-        padding: 10px;
+        padding: 12px;
         display: block;
         width: 100%;
     }
 
-    /* Hero Sektion */
+    /* Hero Section */
     .hero {
         height: auto;
-        padding: 100px 20px;
+        padding: 80px 15px;
     }
 
     .hero .container {
-        padding-top: 10%;
+        padding-top: 5%;
     }
 
     .hero h1 {
@@ -354,14 +369,7 @@ body {
         font-size: 1rem;
     }
 
-    /* Service Sektion */
-    .service-item {
-        width: 100%;
-        max-width: 350px;
-        margin: auto;
-    }
-
-    /* Kontakt Sektion */
+    /* Contact Section */
     .contact-container {
         width: 95%;
         padding: 15px;
@@ -371,7 +379,7 @@ body {
         height: 120px;
     }
 
-    /* Galleri Sektion */
+    /* Gallery Section */
     .gallery-container {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     }
@@ -382,3 +390,37 @@ body {
         font-size: 0.8rem;
     }
 }
+
+/* iPads (medium screens) */
+@media (max-width: 1024px) {
+    .container {
+        width: 95%;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .nav-menu {
+        margin-left: 0;
+        justify-content: center;
+    }
+
+    /* Services on Tablet */
+    #services {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 2 per row */
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .service-item {
+        width: 100%;
+        max-width: 350px;
+    }
+}
+
