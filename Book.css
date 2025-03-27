@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.calendar-container {
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  width: 450px; /* Øget størrelse på kalenderen */
+  font-size: 20px; /* Øget tekststørrelse */
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.nav-btn {
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.nav-btn:hover {
+  background-color: #e0e0e0;
+}
+
+#month-name {
+  font-size: 24px; /* Øget størrelse på månedsnavn */
+  font-weight: bold;
+}
+
+.days-of-week {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.days-of-week span {
+  width: 50px; /* Øget bredde for at gøre dagene større */
+  text-align: center;
+  font-weight: bold;
+}
+
+.days-container {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* 7 kolonner */
+  gap: 10px;
+}
+
+.day {
+  text-align: center;
+  padding: 20px; /* Øget padding for større dage */
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px; /* Giver dagene en højere højde */
+}
+
+.day:hover {
+  background-color: #f0f0f0;
+}
+
+.day.disabled {
+  color: #ccc;
+  pointer-events: none;
+}
+
+.day span {
+  font-size: 18px;
+}

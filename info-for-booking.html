@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Info for Booking</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f7f9;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      text-align: center;
+      color: #444;
+      font-size: 24px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Booking Information</h2>
+    <p><strong>Date:</strong> <span id="bookingDate"></span></p>
+    <p><strong>Time:</strong> <span id="bookingTime"></span></p>
+    
+    <h3>Indtast dine oplysninger:</h3>
+    <input type="email" id="email" placeholder="Din e-mail" required>
+    <input type="text" id="phone" placeholder="Dit telefonnummer" required>
+    <button id="confirmBooking">Bekræft booking</button>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get URL parameters (date and time)
+        const urlParams = new URLSearchParams(window.location.search);
+        const bookingDate = urlParams.get('date') || 'Ukendt dato'; // Fallback value
+        const bookingTime = urlParams.get('time') || 'Ukendt tidspunkt'; // Fallback value
+      
+        // Display the selected date and time
+        document.getElementById('bookingDate').innerText = bookingDate;
+        document.getElementById('bookingTime').innerText = bookingTime;
+      
+        // Handle form submission
+        document.getElementById('confirmBooking').addEventListener('click', function() {
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            
+            // Check for valid email format
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+              alert("Indtast venligst en gyldig e-mail.");
+              return;
+            }            
+      
+          if (email && phone) {
+            // Send booking information to the server
+            const bookingData = {
+              email: email,
+              phone: phone,
+              date: bookingDate,
+              time: bookingTime
+            };
+      
+            // Send data to the server using fetch (or AJAX)
+            fetch('send-booking.php', {  // PHP script URL
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(bookingData),
+            })
+            .then(response => response.json())
+            .then(data => {
+              if (data.success) {
+                alert("Booking bekræftet! Du vil blive kontaktet af frisøren.");
+              } else {
+                alert("Der opstod en fejl. Prøv venligst igen.");
+              }
+            })
+            .catch(error => {
+              console.error('Fejl:', error);
+              alert("Der opstod en fejl. Prøv venligst igen.");
+            });
+          } else {
+            alert("Udfyld venligst alle felter.");
+          }
+        });
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sami Cutz</title>
+    <link rel="stylesheet" href="samitcutz.css">
+    <style>
+       
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        .about-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 40px;
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .about-info, .opening-hours {
+            flex: 1;
+        }
+        .about-info h2, .opening-hours h2 {
+            color: #000; /* Sort tekst */
+            border-bottom: 3px solid #e9c46a; /* Guld bundlinje */
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }        
+        .opening-hours {
+            background-color: #f8f8f8;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .opening-hours ul {
+            list-style: none;
+            padding: 0;
+        }
+        .opening-hours ul li {
+            background: #fff;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .footer {
+            text-align: center;
+            background: #222;
+            color: #fff;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="logo2.png" alt="Sami Cutz Logo" class="logo">
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="#Forside">FORSIDE</a></li>
+                <li><a href="Service.html">SERVICES</a></li>
+                <li><a href="Galleri.html">GALLERI</a></li>
+                <li><a href="Kontakt.html">KONTAKT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Udvidet Forside Sektion -->
+    <section id="Forside" class="hero">
+        <div class="container">
+            <h1>Velkommen til Sami Cutz</h1>
+            <p>Få professionel hårpleje og styling. Book din tid nu og oplev forskellen!</p>
+            <a href="Booking.html" class="book-now-btn">BOOK NU</a>
+        </div>
+    </section>
+
+    <!-- Om os sektion med udvidet tekst og åbningstider -->
+    <section class="about">
+        <div class="container about-content">
+            <div class="about-info">
+                <h2>Mere om os</h2>
+                <p>Hos Sami Cutz handler det ikke kun om en klipning , det handler om en oplevelse. Vi tilbyder skræddersyet hårpleje og skarpe fades, der passer til din stil og personlighed. Vores passionerede frisører sørger for, at du altid forlader stolen med et friskt og selvsikkert look.</p>
+                <p>Vi kombinerer moderne teknikker med klassisk barberhåndværk for at give dig den bedste service. Uanset om du har brug for en præcisionsklipning, en tæt barbering eller en styling til en særlig begivenhed, står vi klar til at hjælpe dig.</p>
+                <p>Vores mål er at skabe en afslappet atmosfære, hvor du kan nyde en professionel klipning i hyggelige omgivelser. Vi bruger kun kvalitetsprodukter for at sikre det bedste resultat til vores kunder.</p>
+            </div>
+            <div class="opening-hours">
+                <h3>Åbningstider</h3>
+                <ul>
+                    <li>Hver 2. lørdag: 09:00 - 14:00</li>
+                    <li>Tirsdag: 09:00 - 17:00</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Sami Cutz. Alle rettigheder forbeholdes.</p>
+        </div>
+    </footer>
+</body>
+</html>
